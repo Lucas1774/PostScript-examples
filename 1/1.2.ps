@@ -1,0 +1,31 @@
+%!PS
+
+% definir escala
+/scale_cm 28.346456692913385826771653543307 def
+scale_cm scale_cm scale
+
+% definir tamaño del lado y altura
+/side 5 def
+/height side 3 sqrt mul 2 div def
+
+% calcular el desplazamiento para centrar el triángulo
+/paper_width 21 def
+/paper_height 29.7 def
+
+/dx paper_width side sub 2 div def 
+/dy paper_height height sub 2 div def
+
+% mover el sistema de referencia
+dx dy translate
+
+% dibujar
+newpath % nuevo path
+0 0 moveto % mover el puntero al centro
+side 0 lineto %dibujar línea en eje x
+60 rotate % rotar el sistema de referencia
+0 0 moveto
+side 0 lineto
+240 rotate
+side 0 rlineto
+closepath
+fill % rellenar
