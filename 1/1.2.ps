@@ -20,7 +20,7 @@ newpath % nuevo path
 dx dy moveto % mover el puntero al inicio
 side 0 rlineto % línea en eje x
 side 2 div neg height rlineto % línea hacia el vértice superior
-0 0 rlineto % vuelta al origen (opcional ya que closepath lo hace)
+dx dy lineto % vuelta al origen (opcional ya que closepath lo hace)
 closepath
 fill % dibujar
 showpage
