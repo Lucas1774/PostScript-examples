@@ -15,17 +15,12 @@ scale_cm scale_cm scale
 /dx paper_width side sub 2 div def 
 /dy paper_height height sub 2 div def
 
-% mover el sistema de referencia
-dx dy translate
-
 % dibujar
 newpath % nuevo path
-0 0 moveto % mover el puntero al centro
-side 0 lineto %dibujar línea en eje x
-60 rotate % rotar el sistema de referencia
-0 0 moveto
-side 0 lineto
-240 rotate
-side 0 rlineto
+dx dy moveto % mover el puntero al inicio
+side 0 rlineto % línea en eje x
+side 2 div neg height rlineto % línea hacia el vértice superior
+0 0 rlineto % vuelta al origen (opcional)
 closepath
-fill % rellenar
+fill % dibujar
+showpage
