@@ -62,7 +62,7 @@
     end
 } def
 
-/mkline { % para poder reutilizar código, recibirá el mismo argumento que 2.1. A través de un translate y de la redefinición de pointsWide y pointsHigh, puedo cambiar el comportamiento de la función sin reescribir código.
+/mkline { % para poder reutilizar código, recibirá el mismo argumento que 2.1. A través de un translate y de la redefinición de pointsWide y pointsHigh, puedo cambiar el comportamiento de la función artificialmente sin reescribir código, usando estas globales.
 % [A B C] -> path
     1 dict begin
     /r exch def
@@ -85,12 +85,13 @@
 /r4 [1 -1 0] def % c despejar B
 /r4Color [0 0 1] def % azul
 /r5 [0.5 1 1] def % d despejar A y C
-/r5Color [1 0.5 0] def % naranja (echo de menos css)
+/r5Color [1 0.5 0] def % naranja
 /r6 [1 0 1] def % e despejar C
 /r6Color [1 1 0] def % amarillo
 /xAxis [0 1 0] def
 /yAxis [1 0 0] def
 
+% ejecución. Se pueden cambiar las instrucciones de orden para testar más comportamientos
 r1 mkline
 black aload pop setrgbcolor
 stroke
@@ -122,5 +123,4 @@ stroke
 yAxis mkline
 black aload pop setrgbcolor
 stroke
-
 showpage
