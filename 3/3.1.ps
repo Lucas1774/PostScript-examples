@@ -11,7 +11,8 @@
 /pi 3.14159 def
 
 % cricunf, sides on stack -> path
-/polygonRenderer { 2 dict begin
+/polygonRenderer {
+    2 dict begin
     /sides exch def
     /circumference exch def
     /ratius circumference pi div 2 div def
@@ -36,6 +37,8 @@
 /green [0 1 0] def
 /p4 [12 7] def % heptágono
 /blue [0 0 1] def
+/p5 [20 11] def % undecágono
+/yellow [1 1 0] def
 
 % escala y moverse al centro
 escala_cm dup scale
@@ -53,5 +56,7 @@ green aload pop setrgbcolor
 stroke
 p4 aload pop polygonRenderer
 blue aload pop setrgbcolor
+p5 aload pop polygonRenderer
+yellow aload pop setrgbcolor
 stroke
 showpage
