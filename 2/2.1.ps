@@ -25,7 +25,7 @@
         /yright C A xright mul add B div neg def
         [xleft yleft] % P a la pila
         [xright yright] % Q a la pila
-    }{ % fundamentalmente horizontal simplemente intercambiar y por x
+    }{ % fundamentalmente vertical simplemente intercambiar y por x
         /yleft 0 def
         /yright pointsHigh def
         /xleft C B yleft mul add A div neg def % y = -(C + Bx) / A
@@ -115,5 +115,4 @@ stroke
 yAxis mkline
 black aload pop setrgbcolor
 stroke
-
 showpage
