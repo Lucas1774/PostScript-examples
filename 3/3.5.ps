@@ -78,7 +78,7 @@ numberOfStars {
     fill
     -15 rotate % resetear el sistema de coordenadas al centro de la página y de la bandera
     angle cos starsRatius mul neg angle sin starsRatius mul neg translate
-    /angle angle 30 add def % incrementar ángulo
+    /angle angle 360 12 div add def % incrementar ángulo
 } repeat
 
 showpage
