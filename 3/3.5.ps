@@ -30,8 +30,8 @@
 
     sides 5 ge sides 2 mod 0 ne and { % si al menos es pentágono y es de lados impares
         /segments sides array def % array de segmentos
-        segments 0 [ratius 0] put % punto inicial
-        /angle 360 sides div 2 mul def % como en 3.1, ampliando por la amplitud del salto
+        segments 0 [0 ratius] put % punto inicial
+        /angle 360 sides div 2 mul 90 add def % como en 3.1, ampliando por la amplitud del salto
         1 1 sides 1 sub { % lados - 1 veces
             /i exch def
             segments i [angle cos ratius mul angle sin ratius mul] put % como en 3.1
@@ -73,10 +73,8 @@ fill
 
 numberOfStars {
     angle cos starsRatius mul angle sin starsRatius mul translate % moverme a startRatius * angle
-    15 rotate % en 3.3, los polígonos se empiezan a dibujar en el punto radio, 0. Este ajuste no sería necesario si se empezaran a dibujar en el punto 0, radio
     star aload pop polygonRenderer
     fill
-    -15 rotate % resetear el sistema de coordenadas al centro de la página y de la bandera
     angle cos starsRatius mul neg angle sin starsRatius mul neg translate
     /angle angle 360 12 div add def % incrementar ángulo
 } repeat
@@ -108,51 +106,35 @@ fill
 /alaskaStar [ height 18 div pi mul 5] def % Alrededor de la mitad que las de la UE
 
 -5 2 translate % esta y las sucesivas posiciones van a ser introducidas completamente a ojo, ya que no siguen ningún patrón. Tras comprobar los resultados, mi ojo (el relativo, si no el absoluto) es bastante bueno
-15 rotate
 alaskaStar aload pop polygonRenderer
 fill
--15 rotate
 
 1 -0.5 translate
-15 rotate
 alaskaStar aload pop polygonRenderer
 fill
--15 rotate
 
 1 -1 translate
-15 rotate
 alaskaStar aload pop polygonRenderer
 fill
--15 rotate
 
 1 -1 translate
-15 rotate
 alaskaStar aload pop polygonRenderer
 fill
--15 rotate
 
 -0.2 -1 translate
-15 rotate
 alaskaStar aload pop polygonRenderer
 fill
--15 rotate
 
 3 -0.2 translate
-15 rotate
 alaskaStar aload pop polygonRenderer
 fill
--15 rotate
 
 1 1 translate
-15 rotate
 alaskaStar aload pop polygonRenderer
 fill
--15 rotate
 
 2 4 translate
-15 rotate
 star aload pop polygonRenderer
 fill
--15 rotate
 
 showpage
