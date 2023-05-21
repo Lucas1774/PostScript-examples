@@ -36,8 +36,8 @@
 
     sides 5 ge sides 2 mod 0 ne and { % si al menos es pentágono y es de lados impares
         /segments sides array def % array de segmentos
-        segments 0 [ratius 0] put % punto inicial
-        /angle 360 sides div 2 mul def % como en 3.1, ampliando por la amplitud del salto
+        segments 0 [0 ratius] put % punto inicial
+        /angle 360 sides div 2 mul 90 add def % como en 3.1, ampliando por la amplitud del salto
         1 1 sides 1 sub { % lados - 1 veces
             /i exch def
             segments i [angle cos ratius mul angle sin ratius mul] put % como en 3.1

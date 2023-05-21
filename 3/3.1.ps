@@ -16,9 +16,9 @@
     /sides exch def
     /circumference exch def
     /ratius circumference pi div 2 div def
-    /angle 360 sides div def % ángulo entre lados
+    /angle 360 sides div 90 add def % ángulo entre lados
     newpath
-    ratius 0 moveto
+    0 ratius moveto
     % repeat sides times
     sides {
     angle cos ratius mul angle sin ratius mul lineto % libro 5.1
